@@ -2,12 +2,23 @@
   <div class="col-xl-12">
     <app-shopping-edit></app-shopping-edit>
     <hr>
-   <ul class="list-group">
+   <!--<ul class="list-group">
      <a class="list-group-item"
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients">
        {{ingredient.name}} ({{ingredient.amount}})
      </a>
-   </ul>
+   </ul>-->
+    <!--<ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+          *ngFor="let ingredient of ingredients">
+        {{ingredient.name}}
+        <span class="badge badge-primary badge-pill">{{ingredient.amount}}</span>
+      </li>
+    </ul>-->
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action"
+         *ngFor="let ingredient of ingredients">{{ingredient.name}} ({{ingredient.amount}})</a>
+    </div>
   </div>
 </div>

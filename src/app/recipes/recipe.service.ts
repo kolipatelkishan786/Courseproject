@@ -7,17 +7,17 @@ export  class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://i.pinimg.com/originals/6f/67/17/6f6717b434fcc97cb5fc8747b23b5001.jpg',
+      'Testy Schnitzel',
+      'A super-test Schnitzel-just awesome!',
+      'http://www.citycountry.net.au/wp-content/uploads/2017/06/250500-Steggles.jpg',
       [
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20)
       ]),
     new Recipe(
-      'Another Test Recipe',
-      'This is simply a test',
-      'https://i.pinimg.com/originals/6f/67/17/6f6717b434fcc97cb5fc8747b23b5001.jpg',
+      'Big Fat Burger',
+      'What else you need to say?',
+      'https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/16961-bbq-pulled-pork-burger-600x600.jpg?ext=.jpg',
       [
         new Ingredient('Buns', 2),
         new Ingredient('Meat', 1)
