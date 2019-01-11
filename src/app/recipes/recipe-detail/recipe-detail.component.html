@@ -14,7 +14,7 @@
 </div>
 <div class="row">
   <div class="col-xl-12">
-    <div class="dropdown" appDropdown>
+   <!-- <div class="dropdown" appDropdown>
       <button class="btn btn-primary dropdown-toggle"
               type="button" data-toggle="dropdown">Manege Recipe
         <span class="caret"></span></button>
@@ -23,6 +23,16 @@
         <li><a href="#">Edit Recipe</a></li>
         <li><a href="#">Delete Recipe</a></li>
       </ul>
+    </div>-->
+    <div class="dropdown" appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Manege Recipe
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#" (click)="onAddToShoppingList()">To shopping List</a>
+        <a class="dropdown-item" href="#">Edit Recipe</a>
+        <a class="dropdown-item" href="#">Delete Recipe</a>
+      </div>
     </div>
   </div>
 </div>
@@ -33,12 +43,17 @@
 </div>
 <div class="row">
   <div class="col-xl-12">
-   <ul class="list-group">
+   <!--<ul class="list-group">
       <li
         class="list-group-item"
       *ngFor="let ingredient of recipe.ingredients">
         {{ingredient.name}} - {{ingredient.amount}}
       </li>
-   </ul>
+   </ul>-->
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action"
+         *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.name}} - {{ingredient.amount}}</a>
+    </div>
   </div>
 </div>
