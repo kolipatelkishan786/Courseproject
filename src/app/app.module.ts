@@ -14,6 +14,7 @@ import {DropdownDirective} from "./shered/dropdown.directive";
 import {ShoppingListService} from "./shopping-list/shopping-list.service";
 import {FormsModule} from "@angular/forms";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipEditComponent } from './recipes/recip-edit/recip-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
     ShoppingEditComponent,
     RecipeItemComponent,
     DropdownDirective,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipEditComponent
   ],
   imports: [
     BrowserModule,
