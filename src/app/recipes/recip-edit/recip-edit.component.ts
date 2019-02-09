@@ -23,5 +23,4 @@ export class RecipEditComponent implements OnInit {
         }
       );
   }
-
 }
