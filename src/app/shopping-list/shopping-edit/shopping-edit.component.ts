@@ -8,6 +8,7 @@ import {NgForm} from "@angular/forms";
 import {Subscription} from "rxjs/internal/Subscription";
 import {Ingredient} from "../../shered/ingredient.model";
 import {ShoppingListService} from "../shopping-list.service";
+import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
   selector: 'app-shopping-edit',
@@ -41,7 +42,11 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   onAddItem(form: NgForm) {
     const value = form.value;
     const newIngredient = new Ingredient(value.name, value.amount);
-    this.slService.addIngredient(newIngredient);
+    if (this.editMode) {
+      this.slService.updateIngredient(this.editedItemIndex, newIngredient)
+    } else {
+      this.slService.addIngredient(newIngredient);
+    }
   }
 
   ngOnDestroy() {
