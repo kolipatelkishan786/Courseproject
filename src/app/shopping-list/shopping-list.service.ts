@@ -1,8 +1,10 @@
 import {Ingredient} from "../shered/ingredient.model";
 import {EventEmitter} from "@angular/core";
+import {Subject} from "rxjs/internal/Subject";
 
 export class ShoppingListService {
   ingredientChanged = new EventEmitter<Ingredient[]>();
+  startedEditing = new Subject<number>();
   private ingredients: Ingredient[] = [
     new Ingredient('Apple', 5),
     new Ingredient('Tomatoes', 10)
