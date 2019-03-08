@@ -8,7 +8,6 @@ import {NgForm} from "@angular/forms";
 import {Subscription} from "rxjs/internal/Subscription";
 import {Ingredient} from "../../shered/ingredient.model";
 import {ShoppingListService} from "../shopping-list.service";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
   selector: 'app-shopping-edit',
@@ -39,7 +38,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     );
   }
 
-  onAddItem(form: NgForm) {
+  onSubmit(form: NgForm) {
     const value = form.value;
     const newIngredient = new Ingredient(value.name, value.amount);
     if (this.editMode) {
@@ -47,6 +46,8 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.slService.addIngredient(newIngredient);
     }
+    this .editMode = false;
+    form.reset();
   }
 
   ngOnDestroy() {
