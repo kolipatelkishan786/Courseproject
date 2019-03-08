@@ -14,7 +14,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
-    this.ingredients = this.slService.getIngredient();
+    this.ingredients = this.slService.getIngredients();
     this.subscription = this.slService.ingredientChanged
       .subscribe(
         (ingredient: Ingredient[]) => {
