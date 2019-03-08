@@ -27,6 +27,9 @@ export class RecipEditComponent implements OnInit {
         }
       );
   }
+  onSubmit() {
+    console.log(this.recipeForm);
+  }
 
   private initForm() {
     let recipeName = '';
