@@ -27,8 +27,18 @@ export class RecipEditComponent implements OnInit {
         }
       );
   }
+
   onSubmit() {
     console.log(this.recipeForm);
+  }
+
+  onIngredient() {
+    (<FormArray>this.recipeForm.get('ingredients')).push(
+      new FormGroup({
+        'name': new FormControl(),
+        'amount': new FormControl()
+      })
+    );
   }
 
   private initForm() {
@@ -41,7 +51,7 @@ export class RecipEditComponent implements OnInit {
       recipeName = recipe.name;
       recipeImagePath = recipe.imagePath;
       recipeDescription = recipe.description
-      if(recipe['ingredients']) {
+      if (recipe['ingredients']) {
         for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
             new FormGroup({
