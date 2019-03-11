@@ -5,7 +5,7 @@ import {ShoppingListService} from "../shopping-list/shopping-list.service";
 import {Subject} from "rxjs/internal/Subject";
 
 @Injectable()
-export  class RecipeService {
+export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
   recipeSelected = new EventEmitter<Recipe>();
@@ -28,7 +28,9 @@ export  class RecipeService {
         new Ingredient('Meat', 1)
       ])
   ];
-  constructor(private slService: ShoppingListService) {}
+
+  constructor(private slService: ShoppingListService) {
+  }
 
   getRecipes() {
     return this.recipes.slice();
@@ -51,5 +53,10 @@ export  class RecipeService {
     this.recipes[index] = newRecipes;
     this.recipesChanged.next(this.recipes.slice());
 
+  }
+
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
   }
 }
