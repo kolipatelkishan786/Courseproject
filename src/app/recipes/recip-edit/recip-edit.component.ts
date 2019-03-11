@@ -41,7 +41,7 @@ export class RecipEditComponent implements OnInit {
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
-    this.onCancel()
+    this.onCancel();
   }
 
   onIngredient() {
@@ -54,6 +54,10 @@ export class RecipEditComponent implements OnInit {
         ])
       })
     );
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
   private initForm() {
@@ -89,7 +93,5 @@ export class RecipEditComponent implements OnInit {
     });
   }
 
-  onCancel() {
-    this.router.navigate(['../']), {relativeTo: this.route}
-  }
+
 }
