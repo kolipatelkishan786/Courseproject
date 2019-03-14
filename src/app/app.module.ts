@@ -18,6 +18,8 @@ import {RecipEditComponent} from './recipes/recip-edit/recip-edit.component';
 import {RecipeService} from "./recipes/recipe.service";
 import {HttpClientModule} from "@angular/common/http";
 import {DataStorageService} from "./shered/data.storage.service";
+import {SignupComponent} from './auth/signup/signup.component';
+import {SigninComponent} from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {DataStorageService} from "./shered/data.storage.service";
     RecipeItemComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipEditComponent
+    RecipEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
