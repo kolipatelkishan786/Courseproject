@@ -19,6 +19,8 @@
           <li><a class="nav-link" href="javascript:" routerLink="/signup">Register</a></li>
           <li><a class="nav-link" href="javascript:" routerLink="/signin">Login</a></li>
         </ng-template>
+        <li><a class="nav-link" href="javascript:" (click)="onLogout()" *ngIf="authService.isAuthenticate()">Logout</a>
+        </li>
         <li class="nav-item dropdown" appDropdown *ngIf="authService.isAuthenticate()">
           <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink"
              data-toggle="dropdown"
