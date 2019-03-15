@@ -8,6 +8,7 @@ import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.compo
 import {RecipEditComponent} from "./recipes/recip-edit/recip-edit.component";
 import {SignupComponent} from "./auth/signup/signup.component";
 import {SigninComponent} from "./auth/signin/signin.component";
+import {AuthGuardService} from "./auth/auth.guard.service";
 
 const routes: Routes = [
 
@@ -15,9 +16,9 @@ const routes: Routes = [
   {
     path: 'recipes', component: RecipesComponent, children: [
       {path: '', component: RecipeStartComponent},
-      {path: 'new', component: RecipEditComponent},
+      {path: 'new', component: RecipEditComponent, canActivate: [AuthGuardService]},
       {path: ':id', component: RecipeDetailComponent},
-      {path: ':id/edit', component: RecipEditComponent},
+      {path: ':id/edit', component: RecipEditComponent, canActivate: [AuthGuardService]},
     ]
   },
   {path: 'shopping-list', component: ShoppingListComponent},
