@@ -8,6 +8,7 @@ import {RecipEditComponent} from "./recip-edit/recip-edit.component";
 import {RecipeDetailComponent} from "./recipe-detail/recipe-detail.component";
 import {RecipeItemComponent} from "./recipe-list/recipe-item/recipe-item.component";
 import {RecipesRoutingModule} from "./recipes.routing.module";
+import {SharedModule} from "../shered/shared.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {RecipesRoutingModule} from "./recipes.routing.module";
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RecipesRoutingModule
+    RecipesRoutingModule,
+    SharedModule
   ]
 })
 export class RecipesModule {

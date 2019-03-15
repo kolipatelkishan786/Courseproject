@@ -16,6 +16,7 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {AuthService} from "./auth/auth.service";
 import {AuthGuardService} from "./auth/auth.guard.service";
 import {RecipesModule} from "./recipes/recipes.module";
+import {SharedModule} from "./shered/shared.module";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {RecipesModule} from "./recipes/recipes.module";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    SharedModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
