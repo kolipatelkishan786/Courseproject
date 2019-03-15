@@ -33,6 +33,8 @@ export class AuthService {
         (token: string) => this.token = token
       );
     return this.token;
-
+  }
+  isAuthenticate() {
+    return this.token != null;
   }
 }
