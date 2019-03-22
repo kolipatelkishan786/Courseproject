@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {DataStorageService} from "../shered/data.storage.service";
-import {AuthService} from "../auth/auth.service";
+import {DataStorageService} from "../../shered/data.storage.service";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-header',
